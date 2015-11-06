@@ -1,0 +1,70 @@
+<div style="background-color:#F3E2A9;border-radius:15px;">
+<div class="modal-header" >
+            <h3 class="modal-title">Add user details</h3>
+        </div>
+        <div class="modal-body" style="background-color:#F3E2A9;">
+           <!--  <ul>
+                <li ng-repeat="item in items">
+                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                </li>
+            </ul> -->
+            <form role="form">
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" ng-model="item.fname" placeholder="First Name" />
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" ng-model="item.lname" placeholder="Last Name" />
+            </div>
+            
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="dob">DOB</label>
+                        <div class="form-group">
+                        <div class='input-group date'>
+                        <input type='date' class="form-control"/>
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                    </div>
+                </div>
+                    <div class="col-sm-6">
+                        <label for="fname">Gender</label>
+                        <br>
+                        <div class="radio-inline" ng-repeat="gender in ::genders">
+                        <label><input type="radio" name="optradio" ng-value="gender.id" ng-model="item.gender.id" class="radio"/>{{::gender.name}}</label>
+                        </div>
+                        
+                    </div>
+      
+                
+                </div>
+                
+        
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="desig">Designation</label>
+                <select class="form-control" ng-model="item.designation">
+                    <option value="one">Select One</option>
+                    <option ng-repeat="desig in ::designations" ng-selected="{{desig.id == item.designation.id}}" value="one">{{desig.name}}</option>
+    
+                </select>
+                
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="number" class="form-control" min="1000" max="100000" id="salary" placeholder="Salary" ng-model="item.salary" />
+            </div>
+            </form>
+           
+        </div>
+        <div class="modal-footer" style="background-color:#F3E2A9;">
+            <button class="btn btn-primary" type="submit" ng-click="ok()">Submit</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+</div>

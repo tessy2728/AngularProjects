@@ -1,0 +1,38 @@
+
+ <!-- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+           
+          <!--  <ul class="nav navbar-nav side-menu">
+    <li class="active">
+         <a href="#/dashboard/home" >Home</a>
+    </li>
+    <li>
+         <a href="#/dashboard/usermanagement"> User Management</a>
+    </li>                       
+ </ul>
+ <div ui-view></div>
+
+ 
+</nav>
+
+ -->
+ <div class="row" ng-init="initialize()">
+    <div class="col-sm-3  content_body" >
+        <ul class="nav navbar-nav side-nav container-fill">
+    <li class="active">
+         
+            <a href="#/dashboard/home" ><span class="glyphicon glyphicon-home">
+                Home</span></a>
+    </li>
+    <li>
+         <a href="#/dashboard/usermanagement"> <span class="glyphicon glyphicon-user">
+            User Management</span></a>
+    </li> 
+     <li>
+         <a href="#"> <span class="glyphicon glyphicon-wrench"> Settings</span></a>
+    </li>                       
+ </ul></div>
+    <div class="col-sm-9 content_body" ><div ui-view style="width:100%;"></div></div>
+ </div>
+
+ 
