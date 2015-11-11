@@ -69,7 +69,7 @@ angular.module('userModule').controller('ModalInstanceCtrl', function ($scope, $
        {
         //if()
         $scope.item.id=$scope.item.fname.substring(0,3)+'qburst'+Math.floor((Math.random()*6)+1);
-        users.push(item);
+        users.push($scope.item);
        }
     localStorage.setItem("Users",JSON.stringify(users));
     console.log("Saved details are:"+JSON.stringify(users));

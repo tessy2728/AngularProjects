@@ -15,7 +15,7 @@ angular.module('UserPortalApp',['ui.router','ui.bootstrap','ng-iscroll','ui.date
 	};
 })
 .config(function($stateProvider,$urlRouterProvider,$locationProvider){
-	$urlRouterProvider.otherwise('/dashboard/Home');
+	$urlRouterProvider.otherwise('/dashboard/home');
 	
 	$stateProvider
 	      .state('dashboard', {
@@ -24,8 +24,8 @@ angular.module('UserPortalApp',['ui.router','ui.bootstrap','ng-iscroll','ui.date
 	        	templateUrl : 'common_components/views/dashboard.html',
 				 controller:'dashboardCtrl'
 	       	})
-	      .state('dashboard.Home', {
-				url: '/Home',
+	      .state('dashboard.home', {
+				url: '/home',
 				templateUrl : 'homeModule/views/home.html',
 				controller:'homeCtrl' 
 			})
@@ -52,18 +52,10 @@ angular.module('UserPortalApp',['ui.router','ui.bootstrap','ng-iscroll','ui.date
                  requireBase: false
           });
         }*/
-        $locationProvider.html5Mode(true);
-        $urlRouterProvider.rule(function ($injector, $location) {
-       //what this function returns will be set as the $location.url
-        var path = $location.path(), normalized = path.toLowerCase();
-        if (path != normalized) {
-            //instead of returning a new url string, I'll just change the $location.path directly so I don't have to worry about constructing a new url string and so a new state change is not triggered
-            $location.replace().path(normalized);
-        }
+        
         //return normalized;
 
 
-        // because we've returned nothing, no state change occurs
-    });
+    
         //$locationProvider.html5Mode({ enabled: true, requireBase: true }).hashPrefix('!');
 });
