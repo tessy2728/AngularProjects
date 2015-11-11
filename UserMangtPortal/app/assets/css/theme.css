@@ -22,7 +22,7 @@ body{
 	top: 85px;
 	bottom: 40px;
 	right:0;*/
-	overflow-y:auto;
+	overflow-y:hidden;
 	overflow-x:hidden;
 
 }
@@ -30,7 +30,10 @@ body{
 	height:75%;
 }
 .content_body{
-	overflow-y:auto;
+	overflow-y:hidden;
+	/*position: absolute;
+	bottom:8%;
+	top:22%;*/
 	overflow-x: hidden;
 }
 .side-menu{
@@ -86,5 +89,60 @@ width:100%;
 }
 .modal-content, .modal-footer{
 	background-color: #F3E2A9;
-border-radius: 15px;
+	border-radius: 15px;
 }
+.form-group-radio{
+	
+	text-align: center;
+}
+
+#wrapper {
+position:relative; z-index:1;
+height:300px;
+width:100%;
+overflow-y:auto;
+overflow-x:hidden;
+}
+.tfl-overflow {
+overflow-x: auto !important;
+-webkit-overflow-scrolling: touch;
+}
+#iscroller{
+    display:inline-block;
+    width:auto;
+}
+
+#scroller, .scroller {
+	position:relative;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	float:left;
+	
+	/*width:100%;*/
+	padding:0;
+}
+
+#scroller ul, #scroller tr,.scroller tr, .scroller ul {
+	position:relative;
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:100%;
+	text-align:left;
+}
+
+#scroller li, .scroller li, #scroller td,.scroller td{
+	padding:0 10px;
+	/*height:40px;*/
+	line-height:40px;
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #fff;
+	
+	font-size:14px;
+}
+
+#scroller li > a, .scroller li > a {
+	display:block;
+}
+body.modal-open .clsDatePicker {
+    z-index: 100000 !important;
+} 

@@ -1,10 +1,23 @@
-<div class="content container-fill">
+<div class="content container-fill" ng-init="initializeView()">
 	<h3 >
 	Welcome to the dashboard!
 
     </h3>
     <div class="container-fluid">
 		Click User Management tab to see the list of users, add new user and edit existing user details.
+		<br></br>
+		Change your permission here!
+		<div class="form-group-radio">
+			<div class="radio-inline" ng-repeat="user in user_types">
+                        <label>
+                        	<input type="radio" name="optradio" ng-click="selectUserType(user)" ng-value="user.id" ng-model="selected_user.id" class="radio" ng-checked="user.id == selected_user.id"/>{{user.name}}</label>
+                        </div>
+
+		<!-- <div class="radio-inline" style="padding:2%" ng-repeat="user in user_types">
+            <label><input type="radio" name="optradio" ng-click="selectUserType(user)" ng-value="user.id" ng-model="selected_user.id" class="radio" />{{user.name}}</label>
+        </div> -->
+		
+		</div>
 		
 	</div>
 </div>

@@ -21,15 +21,15 @@
         <ul class="nav navbar-nav side-nav container-fill">
     <li class="active">
          
-            <a href="#/dashboard/home" ><span class="glyphicon glyphicon-home">
+            <a ui-sref="dashboard.Home" ><span class="glyphicon glyphicon-home">
                 Home</span></a>
     </li>
     <li>
-         <a href="#/dashboard/usermanagement"> <span class="glyphicon glyphicon-user">
+         <a ui-sref="dashboard.usermanagement"> <span class="glyphicon glyphicon-user">
             User Management</span></a>
     </li> 
-     <li>
-         <a href="#"> <span class="glyphicon glyphicon-wrench"> Settings</span></a>
+     <li ng-show="selected_user.settings_permission">
+         <a ui-sref="dashboard.settings"> <span class="glyphicon glyphicon-wrench"> Settings</span></a>
     </li>                       
  </ul></div>
     <div class="col-sm-9 content_body" ><div ui-view style="width:100%;"></div></div>

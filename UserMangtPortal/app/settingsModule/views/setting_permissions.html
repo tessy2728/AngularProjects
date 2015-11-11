@@ -1,0 +1,33 @@
+<div class="content container-fill" ng-init="initializeView()" style="width:90%">
+	<span><h3>
+Permissions for different users</h3><span>
+
+<table class="table table-striped table-bordered" style="overflow-x:auto;background-color:#81F7F3;width:100%">
+
+<th>User Type</th>	
+<th ng-repeat="permission in ::permission_types">{{::permission.name}}</th>
+ <tr ng-repeat="user in ::user_types" ng-show="{{user.id != 1}}">
+
+<td>
+{{::user.name}}
+</td>
+<td>
+<input type="checkbox" id="viewpermission"  ng-checked="user.view_permission" ng-click="setpermission(user)"/>
+</td>
+<td>
+<input type="checkbox" id="addpermission" ng-checked="user.add_permission" ng-click="setpermission(user)"/>
+</td>
+<td>
+<input type="checkbox" id="editpermission"  ng-checked="user.edit_permission" ng-click="setpermission(user)"/>
+</td>
+
+<td>
+<input type="checkbox" id="settingspermission" ng-checked="user.settings_permission"  ng-click="setpermission(user)"/>
+</td>
+
+
+</tr>
+
+</table>
+
+</div>

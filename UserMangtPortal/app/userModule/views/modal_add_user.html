@@ -1,4 +1,4 @@
-<div style="background-color:#F3E2A9;border-radius:15px;">
+<div style="background-color:#F3E2A9;border-radius:15px;" >
 <div class="modal-header" >
             <h3 class="modal-title">Add user details</h3>
         </div>
@@ -18,24 +18,35 @@
                 <input type="text" class="form-control" id="lname" ng-model="item.lname" placeholder="Last Name" />
             </div>
             
-            <div class="form-group">
+            <div class="form-group" ng-app="ui.date">
                 <div class="row">
                     <div class="col-sm-6">
                         <label for="dob">DOB</label>
                         <div class="form-group">
                         <div class='input-group date'>
-                        <input type='date' class="form-control"/>
-                        <span class="input-group-addon">
+                      <!--  <datepicker date-format="MMM dd,yyyy"> --> 
+                   <input type="text" ui-date ui-date="dateOptions" ui-date-format="DD, d MM, yy"  ng-model="item.dob" value="item.dob | date:'d MMM yyyy'" class="form-control clsDatePicker">
+                       
+                       <!--  <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
+                        </span> -->
+                        <!-- 
+                        <datepicker date-format="MMM dd,yyyy"> <input ng-model="date" type="text"/></datepicker>  --> 
+                       <!--  <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span> -->
+                          <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        </span> </input>
+                       <!--  </datepicker>  -->
                     </div>
                     </div>
                 </div>
                     <div class="col-sm-6">
                         <label for="fname">Gender</label>
                         <br>
-                        <div class="radio-inline" ng-repeat="gender in ::genders">
-                        <label><input type="radio" name="optradio" ng-value="gender.id" ng-model="item.gender.id" class="radio"/>{{::gender.name}}</label>
+                        <div class="radio-inline" ng-repeat="gender in genders">
+                        <label><input type="radio" name="optradio" ng-value="gender.id" ng-model="item.gender.id" class="radio"/>{{gender.name}}</label>
                         </div>
                         
                     </div>
@@ -49,13 +60,23 @@
             
             <div class="form-group">
                 <label for="desig">Designation</label>
-                <select class="form-control" ng-model="item.designation">
-                    <option value="one">Select One</option>
-                    <option ng-repeat="desig in ::designations" ng-selected="{{desig.id == item.designation.id}}" value="one">{{desig.name}}</option>
+                <!-- <select class="form-control" ng-model="item.designation.id">
+                    <option value="">Select One</option>
+                    <option ng-repeat="desig in designations" ng-selected="{{desig.id == item.designation.id}}" ng-model="{{item.designation.id}}" value="{{desig.id}}">{{desig.name}}</option>
+                </select> -->
+                <select class="form-control" ng-model="item.designation" ng-options="desig as desig.name for desig in designations"></select>
+                
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="desig">Designation</label>
+                <select class="form-control" ng-model="item.designation.id">
+                    <option ng-value="one">Select One</option>
+                    <option ng-repeat="desig in designations" ng-selected="{{desig.id == item.designation.id}}"  ng-value="desig.id">{{desig.name}}</option>
     
                 </select>
                 
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="salary">Salary</label>
                 <input type="number" class="form-control" min="1000" max="100000" id="salary" placeholder="Salary" ng-model="item.salary" />
@@ -64,7 +85,7 @@
            
         </div>
         <div class="modal-footer" style="background-color:#F3E2A9;">
-            <button class="btn btn-primary" type="submit" ng-click="ok()">Submit</button>
+            <button class="btn btn-primary" type="submit" ng-click="saveDetails()">Save</button>
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
 </div>
