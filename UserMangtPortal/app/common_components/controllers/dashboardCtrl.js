@@ -20,4 +20,5 @@ angular.module('UserPortalApp').controller('dashboardCtrl',function($scope,$root
     {
         $scope.$parent.myScroll['wrapper'].refresh();
     };
+    /* changes for commit demo*/
 });
